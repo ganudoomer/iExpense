@@ -72,8 +72,10 @@ struct ContentView: View {
                                 Text("$\(item.amount)").foregroundColor(.red)
                             }
                             
-                        }
-                     
+                        }.accessibilityElement(children: .ignore).accessibilityLabel("\(item.name) amount \(item.amount)")
+                            .accessibility(hint:Text("type \(item.type)"))
+                        
+
                     }
                     .onDelete(perform: { indexSet in
                         remvoeItems(at: indexSet)

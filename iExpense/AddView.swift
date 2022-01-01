@@ -35,7 +35,8 @@ struct AddView: View {
                     showError.toggle()
                 }
             })
-        }.alert(isPresented: $showError, content: {
+        }
+        .alert(isPresented: $showError, content: {
             Alert(title: Text("Error"), message: Text("Enter a valid number"), dismissButton: .default(Text("Okay boss")))
         })
     }
